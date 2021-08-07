@@ -1,10 +1,10 @@
-#![cfg_attr(not(feature="std"), no_std)]
+#![cfg_attr(not(feature = "std"), no_std)]
 
-#[cfg(feature="alloc")]
+#[cfg(feature = "alloc")]
 extern crate alloc;
 
-use core::iter::FromIterator;
 use core::convert::TryFrom;
+use core::iter::FromIterator;
 
 pub mod str;
 pub(crate) mod util;
@@ -19,7 +19,8 @@ pub trait IteratorDatabase: Iterator + Sized {
 pub trait Database
 where
     Self: TryFrom<Self::Iterator>,
-    <Self as TryFrom<Self::Iterator>>::Error: From<<Self::Iterator as IteratorDatabase>::ParseError>,
+    <Self as TryFrom<Self::Iterator>>::Error:
+        From<<Self::Iterator as IteratorDatabase>::ParseError>,
     Self: FromIterator<<Self::Iterator as Iterator>::Item>,
 {
     type Iterator: IteratorDatabase;

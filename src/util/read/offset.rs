@@ -1,6 +1,6 @@
 use core::convert::TryFrom;
-use core::num::TryFromIntError;
 use core::mem::size_of;
+use core::num::TryFromIntError;
 
 use crate::util::Endianness;
 

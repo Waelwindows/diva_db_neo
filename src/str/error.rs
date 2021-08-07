@@ -10,7 +10,6 @@ pub enum ReadStringError {
     Utf8Error(Utf8Error),
 }
 
-
 impl From<ParseOffsetError> for ReadStringError {
     fn from(err: ParseOffsetError) -> Self {
         Self::ParseOffsetError(err)
