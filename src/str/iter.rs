@@ -2,7 +2,7 @@ use super::error::ReadStringError;
 use crate::util::read::offset::ToOffset;
 use crate::util::Endianness;
 
-#[derive(Debug, PartialEq, Eq, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, Clone)]
 pub struct StringDatabase<'a> {
     data: &'a [u8],
     pub index: usize,
